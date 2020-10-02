@@ -169,5 +169,15 @@ ECHO "      ::  ::: ::   ::  :.:: :::    : :: :: ::.: : ::.: :  : :: ::  ::    :
 ECHO "                                                                                                                      "
 ECHO "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 timeout 01 >nul
-
+@ECHO ON
+powershell -command " Set-ExecutionPolicy RemoteSigned -scope LocalMachine "
+powershell -command " iex (new-object net.webclient).downloadstring('https://get.scoop.sh') "
+powershell -command " scoop install aria2 "
+powershell -command " scoop install wget curl grep sed less touch vim sudo "
+powershell -command " scoop bucket add extras "
+powershell -command " scoop install brave "
+powershell -command " scoop install ccleaner "
+powershell -command " Invoke-WebRequest 'http://www.technosys.net/download.aspx?file=syspin.exe' -OutFile C:\Windows\syspin.exe "
+powershell -command " syspin '~\scoop\apps\ccleaner\current\CCleaner64.exe' c:5386 "
+powershell -command " syspin 'C:\Windows\syspin.exe' c:5386 "
 PAUSE
