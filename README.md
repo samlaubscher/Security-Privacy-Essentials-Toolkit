@@ -31,3 +31,5 @@
 ###### Blackbird
 ###### Avira Privacy Pal
 ###### Commodo AV
+###### megasync
+###### protonvpn

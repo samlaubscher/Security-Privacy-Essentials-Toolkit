@@ -186,6 +186,32 @@ timeout 04 >nul
 @ECHO ON
 powershell -command " scoop install brave "
 powershell -command " scoop install ccleaner "
+powershell -command " scoop install shutup10 "
+powershell -command " scoop install megasync "
+powershell -command " scoop install telegram "
+powershell -command " Invoke-WebRequest 'https://downloads.sourceforge.net/project/veracrypt/VeraCrypt%201.24-Update7/VeraCrypt%20Setup%201.24-Update7.exe?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fveracrypt%2Ffiles%2Flatest%2Fdownload&ts=1601728903' -OutFile C:\Windows\veracrypt.exe "
+powershell -command " Invoke-WebRequest 'https://softpedia-secure-download.com/dl/5aba58c7034a31131e083d625867a0ee/5f786b7d/100047165/software/internet/browser/Extensions/KeyScrambler_Setup.exe' -OutFile C:\Windows\keyscrambler.exe "
+powershell -command " Invoke-WebRequest 'https://www.neuber.com/download/SecurityTaskManager_Setup.exe' -OutFile C:\Windows\securitytaskmanager.exe "
+powershell -command " Invoke-WebRequest 'https://downloads.sourceforge.net/project/eraser/Eraser%206/6.2/Eraser%206.2.0.2990.exe?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Feraser%2Ffiles%2FEraser%25206%2F6.2%2FEraser%25206.2.0.2990.exe%2Fdownload&ts=1601727529' -OutFile C:\Windows\eraser.exe "
+powershell -command " Invoke-WebRequest 'https://www.getblackbird.net/download/Blackbird_v1.0.79.3_x32.zip' -OutFile C:\blackbird.zip "
+powershell -command " Expand-Archive 'C:\blackbird.zip' -DestinationPath 'C:\Windows\blackbird' -Force "
+powershell -command " Invoke-WebRequest 'https://protonvpn.com/download/ProtonVPN_win_v1.17.3.exe' -OutFile C:\Windows\protonvpn.exe "
+@ECHO OFF
+ECHO ########################################################################################################################
+ECHO Do not close the following installer windows that pop up..............
+ECHO ########################################################################################################################
+timeout 01 >nul
+@ECHO ON
+start protonvpn.exe
+start keyscrambler.exe
+start securitytaskmanager.exe
+@ECHO OFF
+ECHO ########################################################################################################################
+ECHO PLEASE INSTALL EACH PROGRAM INTO THE C:\Windows\ DIRECTORY BEFORE CONTINUING..............
+ECHO ########################################################################################################################
+timeout 15 >nul
+@ECHO ON
+PAUSE
 @ECHO OFF
 ECHO ########################################################################################################################
 ECHO Stage 3 - Pinning Tools To Taskbar...................
